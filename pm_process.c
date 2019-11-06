@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#define _FILE_OFFSET_BITS 64
+
 #include <errno.h>
 #include <fcntl.h>
 #include <inttypes.h>
@@ -22,7 +24,7 @@
 #include <string.h>
 #include <unistd.h>
 
-#include <pagemap/pagemap.h>
+#include "pagemap.h"
 
 #include "pm_map.h"
 
@@ -106,7 +108,7 @@ int pm_process_pagemap_range(pm_process_t *proc,
     uint64_t firstpage;
     uint64_t numpages;
     uint64_t *range;
-    off64_t off;
+    off_t off;
     int error;
 
     if (!proc || (low > high) || !range_out || !len)
@@ -125,7 +127,7 @@ int pm_process_pagemap_range(pm_process_t *proc,
     if (!range)
         return errno;
 
-    off = lseek64(proc->pagemap_fd, firstpage * sizeof(uint64_t), SEEK_SET);
+    off = lseek(proc->pagemap_fd, firstpage * sizeof(uint64_t), SEEK_SET);
     if (off == (off_t)-1) {
         error = errno;
         free(range);

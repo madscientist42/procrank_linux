@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <pagemap/pagemap.h>
+#include "pagemap.h"
 
 int pm_map_pagemap(pm_map_t *map, uint64_t **pagemap_out, size_t *len) {
     if (!map)

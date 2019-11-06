@@ -25,7 +25,7 @@
 #include <unistd.h>
 #include <signal.h>
 
-#include <pagemap/pagemap.h>
+#include "pagemap.h"
 
 struct proc_info {
     pid_t pid;

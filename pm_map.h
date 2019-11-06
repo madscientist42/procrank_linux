@@ -14,16 +14,11 @@
  * limitations under the License.
  */
 
-#include <pagemap/pagemap.h>
+#ifndef _LIBS_PAGEMAP_PM_MAP_H
+#define _LIBS_PAGEMAP_PM_MAP_H
 
-void pm_memusage_zero(pm_memusage_t *mu) {
-    mu->vss = mu->rss = mu->pss = mu->uss = mu->swap = 0;
-}
+#include "pagemap.h"
 
-void pm_memusage_add(pm_memusage_t *a, pm_memusage_t *b) {
-    a->vss += b->vss;
-    a->rss += b->rss;
-    a->pss += b->pss;
-    a->uss += b->uss;
-    a->swap += b->swap;
-}
+int pm_map_destroy(pm_map_t *map);
+
+#endif

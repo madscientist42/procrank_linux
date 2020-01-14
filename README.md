@@ -38,7 +38,7 @@ Run "./procranc -h" to see the help screen for more options.
 
 # Theory
 
-If you are intereted in the  background, I have written a blog post on smaps
+If you are intereted in the  background, the original porter has written a blog post on smaps
 and Pss at http://2net.co.uk/tutorial/procrank
 
 # Where the source files came from

@@ -10,16 +10,11 @@ on any architecture so long as the kernel has pagemap.
 
 # Build
 
-For a native build:
+To Build:
 
 ```
+$ cmake .
 $ make
-```
-
-To cross compile:
-
-```
-$ make CROSS_COMPILE=<your cross compile prefix>
 ```
 
 # Usage
@@ -62,4 +57,6 @@ The source for libpagemap is from $AOSP/system/extras/libpagemap
 
 And the source for strlcpy is from
 $AOSP/bionic/libc/upstream-openbsd/lib/libc/string/strlcpy.c libpagemap
+
+Additionally, this fork uses CMake to make crosscompile in Yocto and other environments quite a bit easier.
 
